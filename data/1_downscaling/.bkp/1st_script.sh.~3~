@@ -1,0 +1,518 @@
+# script name
+me="$BASH_SOURCE"
+# current folder
+ME=$(realpath .)
+cptd="$ME/11.03";    #  for TAMUK HPC2
+cptx="CPT.x";
+dt1="1957";
+dt2="2010";
+tmp="$ME/tmp";
+xy=$tmp/xy;
+_X="$xy/X";
+_Y="$xy/Y";
+# observed=($tmp/observed_*);
+observed=$tmp/observed;
+forecast=$tmp/forecast;
+cptfiles=$tmp/cptfiles;
+cptresults=$tmp/cptresults;
+cptoutputs=$tmp/cptoutputs;
+unset count;
+# observed=($tmp/observed_29.4375_-98.*);
+# forecasts=(forecast_32.09194_-95.62500 forecast_32.09194_-98.43750 forecast_29.30136_-101.2500 forecast_29.30136_-95.62500 forecast_29.30136_-98.43750);
+# forecasts=(`ls ${forecasts[@]//f/tmp/f}`);
+
+
+################################################################################
+function MSG {
+  # MSGs
+  # set +x  
+  echo -en "\n";
+  text="$1";delay="$2";if [ -z $delay ]; then delay=".001"; fi
+  for i in $(seq 0 $(expr length "${text}")); do printf "${text:$i:1}";sleep ${delay};done;
+  counter;
+  echo -en "\n";
+}
+################################################################################
+
+################################################################################
+function MSGx {
+  echo -en "\r$1";
+  counter;
+}
+################################################################################
+
+################################################################################
+function counter {
+  count=$[$count+1];
+  echo -en "\r\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ..... $count";
+#   printf "%-120s%s" "\r" " ..... $count";
+  # if [[ $count -eq ${DBG[0]} ]]; then
+  #   set -x;
+  # elif [[ $count -eq ${DBG[1]} ]]; then
+  #   set +x;
+  # fi
+  # if [[ $counter -lt $DBG ]]; then
+  #   set -x;
+  # else
+  #   set +x;
+  # fi
+}
+################################################################################
+
+
+case "$1" in
+	"1")
+		# Downloading
+		MSG "################################################################################";
+		MSG "1.Downloading the data";
+		# sanmarcos=""
+		# limits
+
+		# 08172000 SAN MARCOS RIVER AT LULING, TX Latitude : 29 : 39 : 54N Longitude : 097 : 38 : 59W Datum : 322.05 ft .
+		# Drainage area : 838 sq.mi. In hydrologic unit 12100203 and in state of TX ( county 055 ) .
+		# Daily and longer averages for 49 water years are acceptable ( all years except partial years ) .
+		# 4 ----80---- 5 --- 90---- 5 ---00 ---- 5 --- 10 ---- 5 ---20 ---- 5 --- 30 ---- 5 --- 4 *******
+
+		################################################################################
+		stn="08172000";
+		# xy="-99/-97,29/30.5"; # San Marcos
+		# XY_limits="X/${xy//,//RANGEEDGES/Y/}/RANGEEDGES";
+		# XY_ranges=(${xy//,/ })
+		# X_range=$(seq ${XY_ranges[0]//\// .0625 })
+		# Y_range=$(seq ${XY_ranges[1]//\// .0625 })
+
+		# calculating the spatial average for the 1/8 grids covering the basin
+		# basin limits
+		# X1="-98.7";
+		# X2="-97.4";
+		# Y1="29.44";
+		# Y2="30.2";
+		XYURI="http://waterservices.usgs.gov/nwis/site/?format=rdb&sites=08172000";
+		mapURI="http://water.usgs.gov/wsc/cat/";
+		gridsURI="http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.FD/.ECHAM4p5/.Forecast/.ca_sst/.ensemble24/.MONTHLY/[M]average/.prec";
+
+		################################################################################
+		# X,Y limits and ranges
+		# X1="-100";
+		# X2="-95";
+		# Y1="26";
+		# Y2="33";
+		# XY_limits="Y/$Y1/$Y2/RANGEEDGES/X/$X1/$X2/RANGEEDGES";
+		# X_range=$(seq $X1 .0625 $X2)
+		# Y_range=$(seq $Y1 .0625 $Y2)
+		################################################################################
+		# mkdir -p $tmp observed forecast 
+
+		################################################################################
+		# edmaurer observed gridded data => monthly total mm
+		# http://hydro.engr.scu.edu/files/gridded_obs/daily/ascii/gulf_daily_met.tgz
+		# http://hydro.engr.scu.edu/files/gridded_obs/monthly/ascii/gulf_monthly_met.tgz
+
+		mkdir -p $observed/{daily,monthly} $forecast;
+		X1="-98.8125";
+		X2="-97.3125";
+		Y1="29.3125";
+		Y2="30.3125";
+		XY_limits="Y/$Y1/$Y2/RANGEEDGES/X/$X1/$X2/RANGEEDGES";
+		X_range=$(seq $X1 .125 $X2);
+		Y_range=$(seq $Y1 .125 $Y2);
+		################################################################################
+		# observed data
+		################################################################################
+		if [ ! -f $observed/*daily*.tgz ];then
+			MSG "Downloading observed daily";
+			wget "http://hydro.engr.scu.edu/files/gridded_obs/daily/ascii/gulf_daily_met.tgz" -P $observed;
+			MSG "Extracting observed daily";
+			tar xzf $observed/*daily*.tgz -C $observed/daily --strip-components=1;
+		fi;
+		if [ ! -f $observed/*monthly*.tgz ];then
+			MSG "Downloading observed monthly";
+			wget "http://hydro.engr.scu.edu/files/gridded_obs/monthly/ascii/gulf_monthly_met.tgz" -P $observed;
+			MSG "Extracting observed monthly";
+			tar xzf $observed/*monthly*.tgz -C $observed/monthly --strip-components=1;
+		fi;
+		allobs="";
+		for y in $Y_range;do
+			for x in $X_range;do
+				MSGx "Copying (${observed//$ME\/}/monthly/data_$y"_"$x) to (${observed//$ME\/}/observed_$y"_$x")";
+				awk '{f="'${observed//$ME\/}"/observed_"$y"_"$x'";print $1,$3>sprintf("%s_%02d",f,$2)}' "${observed//$ME\/}/monthly/data_"$y"_"$x;
+				allobs=$allobs" ${observed//$ME\/}/monthly/data_"$y"_"$x;
+			done;
+		done;
+
+		echo;
+
+		# find the files within the limits
+		# ls data/data_*|awk -F_ '$2>='"$Y1"'&&$2<='"$Y2"'&&$3>='"$X1"'&&$3<='"$X2"''
+		# save to pcpt.obs.avg (monthly total mm)
+		MSG "Calculating ${observed//$ME\/}/observed.pcpt.avg";
+		# awk '{ a[FNR]=(a[FNR]?a[FNR]:"")+$3;b[FNR]+=!!a[FNR];y[FNR]=$1;m[FNR]=$2} END { for(i=1;i<=FNR;i++) print y[i],m[i],a[i]/b[i] }' $(ls $observed/observed_*|awk -F_ '$(NF-1)>='"$Y1"'&&$(NF-1)<='"$Y2"'&&$(NF)>='"$X1"'&&$(NF)<='"$X2"'')>$observed/observed.pcpt.avg
+		awk '{ a[FNR]=(a[FNR]?a[FNR]:"")+$3;b[FNR]+=!!a[FNR];y[FNR]=$1;m[FNR]=$2} END { for(i=1;i<=FNR;i++) print y[i],m[i],a[i]/b[i] }' $(ls $allobs)>${observed//$ME\/}/observed.pcpt.avg;
+
+		MSG "Building ${observed//$ME\/}/observed.grids.csv";
+		ls $allobs|awk -F_ 'BEGIN{print "X Y"}{print $(NF),$(NF-1)}'>${observed//$ME\/}/observed.grids.csv
+
+		################################################################################
+		# ECHAM4.5 forcast data => monthly avg m/s
+		# X1="-98.6875";
+		# X2="-97.4375";
+		# Y1="29.4375";
+		# Y2="30.1875";
+
+		# X	-101.25
+		# X	-95.625
+		# Y	26.51077
+		# Y	32.09194
+
+		X1="-101";
+		X2="-95";
+		Y1="27";
+		Y2="32";
+		XY_limits="Y/$Y1/$Y2/RANGEEDGES/X/$X1/$X2/RANGEEDGES";
+		X_range=$(seq $X1 .0625 $X2);
+		Y_range=$(seq $Y1 .0625 $Y2);
+		# download ECHAM4.5 preciptation forecast data
+		# detail: http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.FD/.ECHAM4p5/.Forecast/.ca_sst/.ensemble24/.MONTHLY/%5BM%5Daverage/.prec/Y/26/33/RANGEEDGES/X/-100/-95/RANGEEDGES/
+		if [ ! -f $forecast/forecast.pcpt ];then
+			echo "Downloading ECHAM4.5 forecasts X ($X1,$X2), Y($Y1,$Y2) ==> (${forecast//$tmp\/}/forecast.pcpt)";
+			wget "http://iridl.ldeo.columbia.edu/SOURCES/.IRI/.FD/.ECHAM4p5/.Forecast/.ca_sst/.ensemble24/.MONTHLY/[M]average/.prec/Y/$Y1/$Y2/RANGEEDGES/X/$X1/$X2/RANGEEDGES/gridtable.tsv" --output-document $forecast/forecast.pcpt;
+		fi
+
+		MSG "Calculating ${forecast//$tmp\/}/forecast.grids.csv";
+		awk 'NR>1{print $2,$3}' $forecast/forecast.pcpt|sort|uniq|sed '1iX Y'>$forecast/forecast.grids.csv;
+		MSG "Generating ${forecast//$tmp\/}/forecast_{grids}_{lead_times}";
+		awk 'NR>1{t=mktime("2000 "$5*1+1" 1 0 0 0");y=strftime("%Y",t)-40;m=strftime("%m",t);d=strftime("%d",t);print y,$1>"'$forecast'/forecast_"$3"_"$2"_"m"_"($4*1+.5)}' "$forecast/forecast.pcpt";
+
+		# . "$me" 2;
+
+	;;
+	"2")
+		MSG "################################################################################";
+		MSG "2.Generating X & Y Files";
+		# forecasts=("forecast_32.09194_-95.62500" "forecast_32.09194_-98.43750" "forecast_29.30136_-101.2500" "forecast_29.30136_-95.62500" "forecast_29.30136_-98.43750");
+		# pr -mts" " "${forecasts[@]//f/$tmp/f}"|awk '$1>="'$dt1'"&&$1<="'$dt2'"{for(i=0;i++<=NF;)if(i<4||i%3==0)printf $i" ";printf "\n"}' > $_X;
+		# echo "Generating Xs & Ys";
+		mkdir -p $xy;
+		_X="$xy/X_";
+		_Y="$xy/Y_";
+		MLs=(`ls $forecast/forecast_*|awk -F_ '{print $(NF-1)"_"$(NF)}'|sort|uniq`);
+		for ml in ${MLs[@]};do
+			MSGx "Generating (${_X//$ME\/}$ml) from (${forecast//$ME\/}/forecast_*_$ml)";
+			forecasts="${forecast//$ME\/}/forecast_*$ml";
+			ls $forecasts|awk -F_ 'BEGIN{s="STN";y="LAT";x="LON"}{s=s",forecast"NR;y=y","$(NF-3);x=x","$(NF-2)}END{print s"\n"y"\n"x}'>$_X$ml;
+			pr -mts" " $forecasts|awk '$1>="'$dt1'"&&$1<="'$dt2'"{f="'$_X$ml'";for(i=0;i++<=NF;)if(i==1||i%2==0)printf $i" ">>f;printf "\n">>f}';
+		done
+		echo;
+		# return;
+
+		obs=(${observed//$ME\/}/observed_*);
+		for f in "${!obs[@]}";do
+			MSGx "Generating (${obs[f]//observed\/observed/xy/Y}) from (${obs[f]//$tmp\/})";
+			echo "${obs[f]}" |awk -F_ '{print "STN,"$(NF)"\nLAT,"$(NF-2)"\nLON,"$(NF-1) > "'${obs[f]//observed\/observed/xy/Y}'"}';
+			cat "${obs[f]}" >> ${obs[f]//observed\/observed/xy/Y} ;
+		done
+		echo;
+
+		# . "$me" 3;
+
+	;;
+	"3")
+		MSG "################################################################################";
+		MSG "3.Generating CPT Files";
+		mkdir -p $cptfiles $cptresults;
+		# echo "PCR";
+		# Xys="29.30136,29.30136,29.30136,32.09194,32.09194"
+		# Xxs="-101.2500,-95.62500,-98.43750,-95.62500,-98.43750"
+		# Y1="29.3125 -97.3125"
+		# Y2="30.3125 -98.8125"
+		
+		# cptLimitsX="`Rscript --vanilla <(sed "1,/""<""R_SCRIPT/d;/R_SCRIPT/d" "$me") "lmts" "$Xys $Xxs"`";
+		# echo "$Xys $Xxs ($cptLimitsX)";
+		# cptLimitsY="`Rscript --vanilla <(sed "1,/""<""R_SCRIPT/d;/R_SCRIPT/d" "$me") "lmts" "$Y1"`";
+		# echo "$Y1 ($cptLimitsY)";
+		# cptLimitsY="`Rscript --vanilla <(sed "1,/""<""R_SCRIPT/d;/R_SCRIPT/d" "$me") "lmts" "$Y2"`";
+		# echo "$Y2 ($cptLimitsY)";
+		MSG "Finding the X limits:";
+		# Xxys="$(cut -d, -f2- $xy/X_01_1|sed '2,3! d'|tr '\n' ' ')";
+		# cptLimitsX="`Rscript --vanilla <(sed '1,/^# RSCRIPT START/d;/^# RSCRIPT END/,$d' "$me") "lmts" "$Xxys"`";
+		cptLimitsX="`Rscript --vanilla <(sed '1,/^# RSCRIPT START/d;/^# RSCRIPT END/,$d' "$me") "$xy/X_01_1"`";
+
+		MSGx "$cptLimitsX";
+		# cptLimitsX=${cptLimitsX//,/\\n}
+		# echo $cptLimitsX
+		Xs=($xy/X*);
+		Ys=($xy/Y*);
+
+		ms=$(ls tmp/xy/X_*|awk -F_ '{print $2}'|sort|uniq)
+		Ls=$(ls tmp/xy/X_*|awk -F_ '{print $3}'|sort|uniq)
+
+		for y in $xy/Y_*; do
+			if [[ "$y" == *01 ]];then 
+				cptLimitsY="`Rscript --vanilla <(sed '1,/^# RSCRIPT START/d;/^# RSCRIPT END/,$d' "$me") "$y"`";
+				MSGx "\nFinding the Y limits: $cptLimitsY\n";
+			fi;
+
+			# MSGx "\nGenerating CPT files:";
+
+			m=${y//*_};
+			for L in $Ls; do
+				mL=$m"_"$L;
+
+				cpt_X=${y//Y*/X}_$mL;
+				cpt_Y=$y;
+				cpt_CV=${y//xy\/Y/cptresults/CV}_$L;
+				cpt_cpt=${y//xy\/Y/cptfiles\/cpt}_$L;
+				# MSGx " "$m"_"$L;
+				MSGx "$cpt_cpt";
+
+				awk '{print $1}' <(sed '1,/^# cpt_CV_cfg START/d;/^# cpt_CV_cfg END/,$d' "$me") |\
+				sed 's%X_%'$cpt_X'%g'|\
+				sed 's%Y_%'$cpt_Y'%g'|\
+				sed 's%CV_%'$cpt_CV'%g'|\
+				sed 's%cptLimitsX%'${cptLimitsX//,/\\n}'%g'|\
+				sed 's%cptLimitsY%'${cptLimitsY//,/\\n}'%g'\
+				> $cpt_cpt;
+			done
+		done
+		# for m in $ms; do
+
+				
+
+		# # for x in "${!Xs[@]}";do
+		# # 	for y in "${!Ys[@]}";do
+		# # 	# if [[ $y -eq 2 ]];then break;fi
+		# # 	cpt_X=$(realpath ${Ys[y]//Y*_/X_});
+		# # 	cpt_Y=$(realpath ${Ys[y]});
+		# # 	cpt_CV=$(realpath ${Ys[y]//xy\/Y_/cptresults\/CV_});
+		# # 	# echo ${Ys[y]//_/ }|rev|cut -d" " -f2,3|rev
+		# # 	cptLimitsY=$(echo ${Ys[y]//_/ }|rev|cut -d" " -f2,3|rev);
+		# # 	# echo $cptLimitsY
+		# # 	cptLimitsY="`Rscript --vanilla <(sed '1,/^# RSCRIPT START/d;/^# RSCRIPT END/,$d' "$me") "lmts" "$cptLimitsY"`";
+		# # 	cpt_cpt=${Ys[y]//xy\/Y_/cptfiles\/cpt_};
+		# # 	MSGx "Generating cpt: ${cpt_cpt//$ME\/}";
+		# # 	# echo $cpt_X $cpt_Y $cpt_CV $cptLimitsX $cptLimitsY $cpt_cpt
+
+		# # 	# awk '{print $1}' $cpt|\
+		# # 	awk '{print $1}' <(sed '1,/^# cpt_CV_cfg START/d;/^# cpt_CV_cfg END/,$d' "$me") |\
+		# # 	sed 's%X_%'$cpt_X'%g'|\
+		# # 	sed 's%Y_%'$cpt_Y'%g'|\
+		# # 	sed 's%CV_%'$cpt_CV'%g'|\
+		# # 	sed 's%cptLimitsX%'${cptLimitsX//,/\\n}'%g'|\
+		# # 	sed 's%cptLimitsY%'${cptLimitsY//,/\\n}'%g'\
+		# # 	> $cpt_cpt;
+		# 	done
+		# done
+
+		MSG "Done";
+
+		# . "$me" 4;
+
+	# "rscript")
+	# 	# Rscript --vanilla <(sed "1,/""<""R_SCRIPT/d;/R_SCRIPT/d" "$me") "`realpath .`";
+	#	# Rscript --vanilla <(awk '/^# RSCRIPT START/,/^# RSCRIPT END/' "$me") "`realpath .`";
+
+	# ;;
+	;;
+	"4")
+		MSG "################################################################################";
+		MSG "3.Running CPT";
+		cd $cptd;
+		# CPTs=($cptfiles_*??);
+		for f in $cptfiles/*;do
+			MSGx "running : $f";
+			./$cptx < $f > ${f//cptfiles\/cpt/cptoutputs/cptoutput};
+		done
+
+		cd "$ME";
+
+	;;
+	*)
+		echo "Usage: . $me [1|2|3|4]";
+
+	;;
+	# "downscale0")
+	# 	MSG "################################################################################";
+	# 	MSG "2.Downscaling";
+	# 	# forecasts=("forecast_32.09194_-95.62500" "forecast_32.09194_-98.43750" "forecast_29.30136_-101.2500" "forecast_29.30136_-95.62500" "forecast_29.30136_-98.43750");
+	# 	# pr -mts" " "${forecasts[@]//f/$tmp/f}"|awk '$1>="'$dt1'"&&$1<="'$dt2'"{for(i=0;i++<=NF;)if(i<4||i%3==0)printf $i" ";printf "\n"}' > $_X;
+	# 	# echo "Generating Xs & Ys";
+	# 	mkdir -p $xy;
+	# 	for L in {1..7};do
+	# 		_X="$xy/X_";
+	# 		_Y="$xy/Y_";
+	# 		frcsts=(`ls $forecast/forecast_*_$L`);
+	# 		forecasts=(${frcsts[@]//$ME\//});
+	# 		pr -mts" " ${forecasts[@]}|awk '$1>="'$dt1'"&&$1<="'$dt2'"{f="'$_X'"$2"_"'$L';for(i=0;i++<=NF;)if(i==1||i%3==0)printf $i" ">f;printf "\n">f;for(i=0;i++<=NF;)if(i<4||i%3==0)printf $i" ";printf "\n"}' > $_X$L;
+
+	# 		S="STN,";Y="LAT,";X="LON,";
+	# 		for f in "${!forecasts[@]}";do
+	# 			S+="forecast$((f+1)),";
+	# 			Y+="`echo "${forecasts[f]}"|awk -F_ '{print $(NF-2)","}'`"; 
+	# 			X+="`echo "${forecasts[f]}"|awk -F_ '{print $(NF-1)","}'`";
+	# 		done
+	# 		sed -i '1i'"$S\n$Y\n$X" $_X*_$L;
+	# 		sed -i 's/,$//' $_X*_$L;
+
+	# 		# echo -en "\r\tCreating: ";
+	# 		# echo -en "\r\t\t\t & from: ${obs[f]//$tmp/}";
+	# 		obs=($observed/observed_*);
+	# 		for f in "${!obs[@]}";do
+	# 			# echo -en "\r${obs[f]//observed_/Y_}";
+	# 			# awk '$1>="'$dt1'"&&$1<="'$dt2'"{split(FILENAME,xy,"_");f=sprintf("'$_Y'.%s_%s.%02d",xy[2],xy[3],$2);print $1,$3>f}' "${obs[f]}";
+				
+	# 			MSGx "Generating (${_X//$tmp\//}{01..12}_$L) and (${obs[f]//$observed\/observed/xy/Y}_{01..12}) from (${obs[f]//$tmp\/}_{01..12})";
+	# 			awk 'BEGIN{split(ARGV[1],xy,"observed_");f="'$_Y'"xy[2]}$1>="'$dt1'"&&$1<="'$dt2'"{print $1,$3>sprintf("%s_%02d",f,$2)}' "${obs[f]}";
+	# 		done
+	# 		MSGx "\n\tAdd header for:";
+	# 		# # Ys
+	# 		Ys=($xy/Y*_??);
+	# 		# Xs="$tmp/X";
+	# 		for f in "${Ys[@]}";do
+	# 			a="${f//_/ }";
+	# 			a=($a);
+	# 			# Xs
+	# 		# 	pr -mts "${_X}.${a[3]}" <(cut -d" " -f2 $f|sed '1i'${a[3]}'\n'${a[1]}'\n'${a[2]}) | sed 's/\t//g' > "${f//Y/X}"
+	# 			MSGx "\t\t\t${f//$xy\//xy/}";
+	# 			sed -i '1iSTN,'${a[-1]}'\nLAT,'${a[-3]}'\nLON,'${a[-2]} $f;
+	# 		done
+	# 		echo;
+	# 	done
+
+	# 	. "$me" cpt;
+
+	# ;;
+esac
+
+
+################################################################################
+return
+################################################################################
+
+################################################################################
+# RSCRIPT START
+################################################################################
+
+
+
+# libraries <- c("tidyverse","split")
+# # install.packages(libraries, repos="http://cran.us.r-project.org", dependencies = TRUE);
+# invisible(suppressMessages(suppressWarnings(lapply(libraries, FUN=function(x){
+# 	require(x, character.only = TRUE, warn.conflicts=FALSE, quietly=FALSE)
+# }))))
+
+
+args <- commandArgs(TRUE);
+# f <- "/home/mr/servers/z/scratch/phd/pihm/sanmarcos/finalrun/data/1_downscaling/tmp/xy/X_01_1";
+# f <- "/home/mr/servers/z/scratch/phd/pihm/sanmarcos/finalrun/data/1_downscaling/tmp/xy/Y_29.3125_-97.3125_01";
+
+f <- args[1];
+		
+d <- read.csv(f, header=F, skip=1, sep=",");
+cat(paste(
+	ceiling(max(d[1,-1])),
+	floor(min(d[1,-1])),
+	floor(min(d[2,-1])),
+	ceiling(max(d[2,-1])),
+	sep = ","
+));
+		
+# if(args[1]=="lmts"){
+# 	m <- grep(",",args[2])
+# 	if(!is.null(m) && length(m)>0){
+# 		# print(paste0("multi: ",args[2]))
+# 		xy <- unlist(strsplit(args[2]," "))
+# 		xy1 <- unlist(strsplit(xy[1],","))
+# 		xy2 <- unlist(strsplit(xy[2],","))
+# 		cat(
+# 			paste0(
+# 				ceiling(max(as.numeric(xy1))),",",
+# 				floor(min(as.numeric(xy1))),",",
+# 				floor(min(as.numeric(xy2))),",",
+# 				ceiling(max(as.numeric(xy2)))
+# 			)
+# 		)
+# 	}else{
+# 		xy <- unlist(strsplit(args[2]," "))
+# 		cat(
+# 			paste0(
+# 				ceiling(max(as.numeric(xy[1]))),",",
+# 				floor(min(as.numeric(xy[1]))),",",
+# 				floor(min(as.numeric(xy[2]))),",",
+# 				ceiling(max(as.numeric(xy[2])))
+# 			)
+# 		)
+# 	}
+# } 
+
+
+
+# libraries <- c("measurements","dplyr","hydroGOF","sp","ggplot2","zoo","sfsmisc","hydroTSM","plyr","latticeExtra")
+# # install.packages(libraries, repos="http://cran.us.r-project.org", dependencies = TRUE);
+# invisible(suppressMessages(suppressWarnings(lapply(libraries, FUN=function(x){
+# 	require(x, character.only = TRUE, warn.conflicts=FALSE, quietly=FALSE)
+# }))))
+
+# dir <- "~/servers/z/scratch/phd/pihm/sanmarcos/fullrun/gridded_obs/cpt"
+# dir <- commandArgs(TRUE)[1];
+
+# setwd(dir);
+
+# obs <- read.csv(paste0(dir,"/tmp/observed.pcpt.avg"), header = FALSE, check.names=FALSE, sep=" ")
+# obs <- data.frame(year = obs$V1 , month = obs$V2 , obs = obs$V3)
+
+# # fcst <- read.csv(paste0(dir,"/tmp/forecast_32.09194_-98.43750"), header = FALSE, check.names=FALSE, sep=" ")
+# # fcst <- data.frame(date = as.yearmon(paste(fcst$V1, fcst$V2), "%Y %m") , fcst = fcst$V3)
+# # both <- merge(obs, fcst)
+# # cor(both$obs,both$fcst)
+
+
+# # head(obs[obs$date==fcst$date])
+# # ??overlaps(obs,fcst)
+
+
+# forecasts <- list.files(paste0(dir,"/tmp"),pattern = "forecast_")
+# rslts <- lapply(forecasts, FUN=function(f){
+#   # paste0(dir,"/tmp/",f)
+#   fcst <- read.csv(paste0(dir,"/tmp/",f), header = FALSE, check.names=FALSE, sep=" ")
+#   # fcst <- read.csv(paste0(dir,"/tmp/forecast_34.88252_-101.2500"), header = FALSE, check.names=FALSE, sep=" ")
+#   fcst <- data.frame(year = fcst$V1 , month = fcst$V2 , fcst = fcst$V3)
+#   tmp <- merge(obs,fcst)
+#   tmp <- tmp[tmp$year>1960 & tmp$year<1981,]
+#   cat(paste0(f," ==> ",round(cor(tmp$obs,tmp$fcst),2)),"\n")
+# })
+
+
+
+
+################################################################################
+# RSCRIPT END
+################################################################################
+
+################################################################################
+# cpt_CV_cfg START
+2	2.  Principal Components Regression (PCR)
+1	X Input File
+X_
+cptLimitsX
+1	Minimum number of X modes: 1
+4	Maximum number of X modes: 4
+2	Y Input File
+Y_
+cptLimitsY
+552	552.  Forecast settings
+95	Confidence level (%): 95
+1	Number of ensemble members: 500
+1	1. Cross-validated error variance			3. Fitted error variance
+0	0. Odds			1. Odds relative to climatology
+4 Number of decimal places (maximum is 8): 4
+8	8.  Length of cross-validation window
+3	Length of cross-validation period (must be odd): 3
+311	311.  Perform cross-validated analysis
+111	111.  Data output
+4	4. Cross-Validated Predictions
+CV_	CV output
+0
+0
+# cpt_CV_cfg END
+################################################################################
+

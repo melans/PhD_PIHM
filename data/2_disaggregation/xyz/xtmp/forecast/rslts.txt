@@ -1,0 +1,689 @@
+tmp/forecast/rslts/data_29.3125_-97.3125_3
+2003 ==> 0.7
+tmp/forecast/rslts/data_29.3125_-97.4375_1
+2003 ==> 0.55
+2007 ==> 0.73
+tmp/forecast/rslts/data_29.3125_-97.4375_3
+1991 ==> 0.72
+tmp/forecast/rslts/data_29.3125_-97.4375_6
+1995 ==> 0.64
+tmp/forecast/rslts/data_29.3125_-97.5625_4
+2007 ==> 0.72
+tmp/forecast/rslts/data_29.3125_-97.6875_5
+1991 ==> 0.63
+tmp/forecast/rslts/data_29.3125_-97.8125_5
+1975 ==> 0.74
+tmp/forecast/rslts/data_29.3125_-97.8125_6
+1991 ==> 0.66
+tmp/forecast/rslts/data_29.3125_-97.9375_2
+1963 ==> 0.68
+tmp/forecast/rslts/data_29.3125_-97.9375_3
+1979 ==> 0.69
+2003 ==> 0.56
+tmp/forecast/rslts/data_29.3125_-97.9375_5
+1967 ==> 0.63
+tmp/forecast/rslts/data_29.3125_-97.9375_6
+1987 ==> 0.57
+tmp/forecast/rslts/data_29.3125_-98.0625_4
+1995 ==> 0.69
+tmp/forecast/rslts/data_29.3125_-98.6875_4
+1987 ==> 0.74
+tmp/forecast/rslts/data_29.4375_-97.3125_1
+1987 ==> 0.62
+2007 ==> 0.58
+tmp/forecast/rslts/data_29.4375_-97.3125_5
+1963 ==> 0.64
+1995 ==> 0.48
+tmp/forecast/rslts/data_29.4375_-97.3125_6
+2003 ==> 0.66
+2007 ==> 0.56
+tmp/forecast/rslts/data_29.4375_-97.4375_4
+1995 ==> 0.66
+tmp/forecast/rslts/data_29.4375_-97.4375_5
+2003 ==> 0.72
+tmp/forecast/rslts/data_29.4375_-97.5625_2
+1963 ==> 0.73
+tmp/forecast/rslts/data_29.4375_-97.5625_5
+1971 ==> 0.68
+tmp/forecast/rslts/data_29.4375_-97.6875_2
+1963 ==> 0.49
+tmp/forecast/rslts/data_29.4375_-97.6875_3
+1971 ==> 0.68
+tmp/forecast/rslts/data_29.4375_-97.8125_1
+2007 ==> 0.66
+tmp/forecast/rslts/data_29.4375_-97.8125_2
+1963 ==> 0.55
+tmp/forecast/rslts/data_29.4375_-97.8125_3
+1971 ==> 0.67
+2003 ==> 0.44
+tmp/forecast/rslts/data_29.4375_-97.8125_5
+1999 ==> 0.71
+tmp/forecast/rslts/data_29.4375_-97.8125_6
+1979 ==> 0.72
+1995 ==> 0.5
+tmp/forecast/rslts/data_29.4375_-97.9375_6
+1971 ==> 0.66
+tmp/forecast/rslts/data_29.4375_-98.1875_4
+1987 ==> 0.69
+tmp/forecast/rslts/data_29.4375_-98.6875_1
+1979 ==> 0.71
+tmp/forecast/rslts/data_29.4375_-98.6875_2
+2007 ==> 0.72
+tmp/forecast/rslts/data_29.4375_-98.6875_3
+1967 ==> 0.68
+1979 ==> 0.65
+1987 ==> 0.6
+tmp/forecast/rslts/data_29.4375_-98.6875_4
+1963 ==> 0.64
+1991 ==> 0.74
+tmp/forecast/rslts/data_29.4375_-98.6875_6
+1971 ==> 0.65
+2003 ==> 0.63
+tmp/forecast/rslts/data_29.4375_-98.8125_3
+1963 ==> 0.67
+1995 ==> 0.59
+tmp/forecast/rslts/data_29.4375_-98.8125_4
+1971 ==> 0.57
+1975 ==> 0.7
+1987 ==> 0.69
+1995 ==> 0.52
+tmp/forecast/rslts/data_29.4375_-98.8125_5
+1971 ==> 0.46
+tmp/forecast/rslts/data_29.4375_-98.8125_6
+2007 ==> 0.38
+tmp/forecast/rslts/data_29.5625_-97.3125_6
+1971 ==> 0.67
+2003 ==> 0.66
+tmp/forecast/rslts/data_29.5625_-97.4375_5
+1963 ==> 0.61
+tmp/forecast/rslts/data_29.5625_-97.5625_6
+1995 ==> 0.73
+tmp/forecast/rslts/data_29.5625_-97.6875_3
+2003 ==> 0.72
+tmp/forecast/rslts/data_29.5625_-97.6875_6
+1995 ==> 0.67
+tmp/forecast/rslts/data_29.5625_-98.0625_3
+1983 ==> 0.74
+tmp/forecast/rslts/data_29.5625_-98.0625_6
+1975 ==> 0.73
+2003 ==> 0.61
+tmp/forecast/rslts/data_29.5625_-98.1875_4
+1979 ==> 0.71
+tmp/forecast/rslts/data_29.5625_-98.3125_3
+2003 ==> 0.72
+tmp/forecast/rslts/data_29.5625_-98.3125_5
+1995 ==> 0.55
+tmp/forecast/rslts/data_29.5625_-98.6875_4
+1987 ==> 0.62
+tmp/forecast/rslts/data_29.5625_-98.8125_1
+1983 ==> 0.63
+1995 ==> 0.35
+2007 ==> 0.67
+tmp/forecast/rslts/data_29.5625_-98.8125_2
+1987 ==> 0.67
+tmp/forecast/rslts/data_29.5625_-98.8125_3
+1967 ==> 0.64
+2003 ==> 0.59
+tmp/forecast/rslts/data_29.5625_-98.8125_4
+1967 ==> 0.69
+1979 ==> 0.57
+tmp/forecast/rslts/data_29.5625_-98.8125_5
+1975 ==> 0.66
+1979 ==> 0.7
+2003 ==> 0.45
+tmp/forecast/rslts/data_29.6875_-97.3125_1
+1995 ==> 0.58
+tmp/forecast/rslts/data_29.6875_-97.3125_2
+1963 ==> 0.69
+2007 ==> 0.64
+tmp/forecast/rslts/data_29.6875_-97.3125_3
+1967 ==> 0.57
+1979 ==> 0.74
+2003 ==> 0.56
+tmp/forecast/rslts/data_29.6875_-97.3125_4
+1963 ==> 0.61
+1995 ==> 0.38
+2003 ==> 0.67
+tmp/forecast/rslts/data_29.6875_-97.3125_5
+1971 ==> 0.65
+1983 ==> 0.65
+tmp/forecast/rslts/data_29.6875_-97.3125_6
+1963 ==> 0.63
+1971 ==> 0.7
+1979 ==> 0.58
+tmp/forecast/rslts/data_29.6875_-97.4375_1
+2003 ==> 0.74
+tmp/forecast/rslts/data_29.6875_-97.4375_4
+1995 ==> 0.49
+tmp/forecast/rslts/data_29.6875_-97.4375_5
+1971 ==> 0.63
+2003 ==> 0.63
+tmp/forecast/rslts/data_29.6875_-97.4375_6
+1995 ==> 0.66
+1999 ==> 0.7
+tmp/forecast/rslts/data_29.6875_-97.5625_1
+2003 ==> 0.54
+tmp/forecast/rslts/data_29.6875_-97.5625_5
+1971 ==> 0.74
+tmp/forecast/rslts/data_29.6875_-97.5625_6
+1971 ==> 0.63
+1975 ==> 0.74
+1995 ==> 0.71
+tmp/forecast/rslts/data_29.6875_-97.6875_1
+1995 ==> 0.71
+2003 ==> 0.54
+tmp/forecast/rslts/data_29.6875_-97.6875_2
+1967 ==> 0.74
+tmp/forecast/rslts/data_29.6875_-97.6875_3
+2003 ==> 0.67
+tmp/forecast/rslts/data_29.6875_-97.6875_5
+1971 ==> 0.71
+tmp/forecast/rslts/data_29.6875_-97.6875_6
+1995 ==> 0.72
+tmp/forecast/rslts/data_29.6875_-97.8125_1
+1995 ==> 0.63
+2003 ==> 0.74
+tmp/forecast/rslts/data_29.6875_-97.8125_2
+1967 ==> 0.73
+tmp/forecast/rslts/data_29.6875_-97.8125_3
+2003 ==> 0.55
+tmp/forecast/rslts/data_29.6875_-97.8125_4
+1987 ==> 0.55
+tmp/forecast/rslts/data_29.6875_-97.8125_6
+1995 ==> 0.57
+tmp/forecast/rslts/data_29.6875_-97.9375_4
+1972 ==> 0.72
+tmp/forecast/rslts/data_29.6875_-97.9375_6
+2003 ==> 0.69
+tmp/forecast/rslts/data_29.6875_-98.0625_2
+2007 ==> 0.64
+tmp/forecast/rslts/data_29.6875_-98.0625_4
+1967 ==> 0.69
+2007 ==> 0.74
+tmp/forecast/rslts/data_29.6875_-98.0625_5
+1967 ==> 0.68
+tmp/forecast/rslts/data_29.6875_-98.1875_1
+2003 ==> 0.53
+tmp/forecast/rslts/data_29.6875_-98.1875_2
+2007 ==> 0.58
+tmp/forecast/rslts/data_29.6875_-98.1875_5
+1967 ==> 0.71
+tmp/forecast/rslts/data_29.6875_-98.3125_1
+1999 ==> 0.64
+2003 ==> 0.38
+2007 ==> 0.53
+tmp/forecast/rslts/data_29.6875_-98.3125_3
+1983 ==> 0.73
+1991 ==> 0.55
+tmp/forecast/rslts/data_29.6875_-98.3125_4
+1979 ==> 0.38
+2007 ==> 0.65
+tmp/forecast/rslts/data_29.6875_-98.3125_5
+1971 ==> 0.56
+2003 ==> 0.7
+tmp/forecast/rslts/data_29.6875_-98.4375_2
+1967 ==> 0.69
+tmp/forecast/rslts/data_29.6875_-98.4375_3
+1967 ==> 0.66
+1979 ==> 0.68
+1987 ==> 0.38
+2003 ==> 0.45
+tmp/forecast/rslts/data_29.6875_-98.4375_4
+1972 ==> 0.74
+1987 ==> 0.31
+tmp/forecast/rslts/data_29.6875_-98.4375_6
+1971 ==> 0.64
+1995 ==> 0.73
+tmp/forecast/rslts/data_29.6875_-98.5625_5
+1991 ==> 0.67
+tmp/forecast/rslts/data_29.6875_-98.6875_3
+1967 ==> 0.71
+tmp/forecast/rslts/data_29.6875_-98.6875_5
+1971 ==> 0.63
+tmp/forecast/rslts/data_29.6875_-98.6875_6
+1987 ==> 0.73
+1995 ==> 0.65
+tmp/forecast/rslts/data_29.6875_-98.8125_3
+1967 ==> 0.74
+2003 ==> 0.56
+tmp/forecast/rslts/data_29.6875_-98.8125_5
+1971 ==> 0.74
+tmp/forecast/rslts/data_29.6875_-98.8125_6
+1995 ==> 0.72
+tmp/forecast/rslts/data_29.8125_-97.3125_1
+1963 ==> 0.73
+tmp/forecast/rslts/data_29.8125_-97.3125_2
+1979 ==> 0.71
+tmp/forecast/rslts/data_29.8125_-97.3125_4
+1995 ==> 0.67
+tmp/forecast/rslts/data_29.8125_-97.3125_6
+1987 ==> 0.66
+2003 ==> 0.57
+tmp/forecast/rslts/data_29.8125_-97.4375_2
+2007 ==> 0.63
+tmp/forecast/rslts/data_29.8125_-97.4375_4
+1995 ==> 0.67
+tmp/forecast/rslts/data_29.8125_-97.4375_6
+1983 ==> 0.65
+1999 ==> 0.49
+tmp/forecast/rslts/data_29.8125_-97.6875_3
+1979 ==> 0.71
+2007 ==> 0.74
+tmp/forecast/rslts/data_29.8125_-97.9375_1
+1999 ==> 0.69
+tmp/forecast/rslts/data_29.8125_-97.9375_2
+1963 ==> 0.72
+1979 ==> 0.71
+1999 ==> 0.73
+tmp/forecast/rslts/data_29.8125_-97.9375_3
+1971 ==> 0.71
+1987 ==> 0.65
+2003 ==> 0.62
+tmp/forecast/rslts/data_29.8125_-97.9375_5
+1971 ==> 0.72
+1995 ==> 0.7
+tmp/forecast/rslts/data_29.8125_-97.9375_6
+1995 ==> 0.62
+1999 ==> 0.67
+tmp/forecast/rslts/data_29.8125_-98.0625_1
+1999 ==> 0.74
+tmp/forecast/rslts/data_29.8125_-98.0625_2
+1963 ==> 0.68
+2007 ==> 0.72
+tmp/forecast/rslts/data_29.8125_-98.0625_3
+1963 ==> 0.56
+1967 ==> 0.57
+tmp/forecast/rslts/data_29.8125_-98.0625_5
+1995 ==> 0.67
+tmp/forecast/rslts/data_29.8125_-98.0625_6
+1999 ==> 0.61
+tmp/forecast/rslts/data_29.8125_-98.1875_2
+1963 ==> 0.38
+1975 ==> 0.72
+2003 ==> 0.74
+tmp/forecast/rslts/data_29.8125_-98.1875_3
+1963 ==> 0.4
+1991 ==> 0.68
+tmp/forecast/rslts/data_29.8125_-98.1875_4
+1987 ==> 0.7
+tmp/forecast/rslts/data_29.8125_-98.1875_5
+2003 ==> 0.4
+tmp/forecast/rslts/data_29.8125_-98.3125_1
+1979 ==> 0.5
+tmp/forecast/rslts/data_29.8125_-98.3125_2
+1963 ==> 0.54
+1975 ==> 0.61
+2003 ==> 0.71
+tmp/forecast/rslts/data_29.8125_-98.3125_3
+1967 ==> 0.61
+2003 ==> 0.5
+tmp/forecast/rslts/data_29.8125_-98.3125_4
+1967 ==> 0.54
+1971 ==> 0.74
+1975 ==> 0.7
+1979 ==> 0.68
+1995 ==> 0.66
+2007 ==> 0.74
+tmp/forecast/rslts/data_29.8125_-98.3125_5
+1967 ==> 0.67
+1987 ==> 0.68
+1999 ==> 0.67
+2003 ==> 0.55
+tmp/forecast/rslts/data_29.8125_-98.3125_6
+1979 ==> 0.72
+tmp/forecast/rslts/data_29.8125_-98.4375_1
+2003 ==> 0.71
+tmp/forecast/rslts/data_29.8125_-98.4375_2
+1967 ==> 0.71
+1971 ==> 0.74
+1975 ==> 0.67
+2003 ==> 0.58
+tmp/forecast/rslts/data_29.8125_-98.4375_3
+1971 ==> 0.73
+tmp/forecast/rslts/data_29.8125_-98.4375_4
+1971 ==> 0.66
+1987 ==> 0.51
+1995 ==> 0.53
+2007 ==> 0.65
+tmp/forecast/rslts/data_29.8125_-98.4375_5
+2003 ==> 0.39
+tmp/forecast/rslts/data_29.8125_-98.4375_6
+1995 ==> 0.39
+2007 ==> 0.57
+tmp/forecast/rslts/data_29.8125_-98.5625_2
+1968 ==> 0.73
+tmp/forecast/rslts/data_29.8125_-98.5625_3
+2003 ==> 0.73
+tmp/forecast/rslts/data_29.8125_-98.5625_4
+1972 ==> 0.73
+1995 ==> 0.74
+tmp/forecast/rslts/data_29.8125_-98.5625_5
+1971 ==> 0.69
+tmp/forecast/rslts/data_29.8125_-98.5625_6
+1995 ==> 0.65
+tmp/forecast/rslts/data_29.8125_-98.6875_1
+1971 ==> 0.69
+tmp/forecast/rslts/data_29.8125_-98.6875_2
+1967 ==> 0.74
+tmp/forecast/rslts/data_29.8125_-98.6875_3
+2003 ==> 0.57
+tmp/forecast/rslts/data_29.8125_-98.6875_5
+1971 ==> 0.56
+2003 ==> 0.53
+tmp/forecast/rslts/data_29.8125_-98.8125_1
+1991 ==> 0.7
+tmp/forecast/rslts/data_29.8125_-98.8125_3
+1963 ==> 0.66
+tmp/forecast/rslts/data_29.8125_-98.8125_5
+1971 ==> 0.63
+2003 ==> 0.64
+tmp/forecast/rslts/data_29.8125_-98.8125_6
+1983 ==> 0.74
+tmp/forecast/rslts/data_29.9375_-97.3125_4
+2003 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-97.3125_6
+1979 ==> 0.68
+tmp/forecast/rslts/data_29.9375_-97.4375_3
+1979 ==> 0.71
+tmp/forecast/rslts/data_29.9375_-97.5625_3
+1979 ==> 0.67
+tmp/forecast/rslts/data_29.9375_-97.6875_1
+2007 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-97.6875_3
+1967 ==> 0.73
+1987 ==> 0.72
+1995 ==> 0.69
+tmp/forecast/rslts/data_29.9375_-97.6875_4
+1995 ==> 0.7
+2003 ==> 0.7
+tmp/forecast/rslts/data_29.9375_-97.8125_4
+1963 ==> 0.72
+1995 ==> 0.74
+2007 ==> 0.66
+tmp/forecast/rslts/data_29.9375_-97.8125_6
+1979 ==> 0.69
+tmp/forecast/rslts/data_29.9375_-97.9375_1
+1995 ==> 0.71
+tmp/forecast/rslts/data_29.9375_-97.9375_2
+1963 ==> 0.68
+tmp/forecast/rslts/data_29.9375_-97.9375_3
+1971 ==> 0.65
+1987 ==> 0.67
+2003 ==> 0.49
+tmp/forecast/rslts/data_29.9375_-97.9375_5
+1983 ==> 0.71
+1995 ==> 0.68
+tmp/forecast/rslts/data_29.9375_-97.9375_6
+1971 ==> 0.74
+2003 ==> 0.57
+tmp/forecast/rslts/data_29.9375_-98.0625_1
+1975 ==> 0.64
+1983 ==> 0.66
+2003 ==> 0.73
+tmp/forecast/rslts/data_29.9375_-98.0625_2
+1963 ==> 0.24
+2007 ==> 0.65
+tmp/forecast/rslts/data_29.9375_-98.0625_3
+2003 ==> 0.74
+tmp/forecast/rslts/data_29.9375_-98.0625_4
+1975 ==> 0.61
+1995 ==> 0.61
+1999 ==> 0.7
+tmp/forecast/rslts/data_29.9375_-98.0625_5
+1987 ==> 0.69
+tmp/forecast/rslts/data_29.9375_-98.0625_6
+1963 ==> 0.58
+1995 ==> 0.69
+1999 ==> 0.73
+tmp/forecast/rslts/data_29.9375_-98.1875_1
+1995 ==> 0.59
+2003 ==> 0.62
+2007 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-98.1875_2
+1967 ==> 0.72
+1979 ==> 0.53
+tmp/forecast/rslts/data_29.9375_-98.1875_3
+1963 ==> 0.56
+1971 ==> 0.72
+1991 ==> 0.66
+2003 ==> 0.27
+tmp/forecast/rslts/data_29.9375_-98.1875_4
+1987 ==> 0.34
+1999 ==> 0.69
+2003 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-98.1875_5
+1971 ==> 0.51
+tmp/forecast/rslts/data_29.9375_-98.1875_6
+1971 ==> 0.56
+1975 ==> 0.7
+1979 ==> 0.65
+1995 ==> 0.52
+2003 ==> 0.62
+2007 ==> 0.52
+tmp/forecast/rslts/data_29.9375_-98.3125_3
+2003 ==> 0.46
+tmp/forecast/rslts/data_29.9375_-98.3125_4
+1987 ==> 0.69
+tmp/forecast/rslts/data_29.9375_-98.3125_5
+1967 ==> 0.58
+tmp/forecast/rslts/data_29.9375_-98.4375_1
+1979 ==> 0.67
+1991 ==> 0.6
+tmp/forecast/rslts/data_29.9375_-98.4375_3
+1963 ==> 0.52
+1967 ==> 0.55
+1979 ==> 0.5
+1983 ==> 0.58
+1987 ==> 0.67
+tmp/forecast/rslts/data_29.9375_-98.4375_4
+1971 ==> 0.67
+1979 ==> 0.64
+1991 ==> 0.69
+1995 ==> 0.51
+tmp/forecast/rslts/data_29.9375_-98.4375_5
+2003 ==> 0.71
+2007 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-98.4375_6
+1967 ==> 0.67
+tmp/forecast/rslts/data_29.9375_-98.5625_1
+1971 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-98.5625_2
+1963 ==> 0.74
+1967 ==> 0.71
+tmp/forecast/rslts/data_29.9375_-98.5625_4
+1987 ==> 0.53
+tmp/forecast/rslts/data_29.9375_-98.5625_5
+1971 ==> 0.66
+2003 ==> 0.72
+tmp/forecast/rslts/data_29.9375_-98.5625_6
+1963 ==> 0.73
+1987 ==> 0.72
+1995 ==> 0.48
+tmp/forecast/rslts/data_29.9375_-98.6875_3
+2003 ==> 0.63
+tmp/forecast/rslts/data_29.9375_-98.6875_5
+1971 ==> 0.62
+2003 ==> 0.65
+tmp/forecast/rslts/data_30.0625_-97.3125_6
+1999 ==> 0.54
+tmp/forecast/rslts/data_30.0625_-97.4375_2
+1967 ==> 0.71
+tmp/forecast/rslts/data_30.0625_-97.4375_6
+1999 ==> 0.71
+tmp/forecast/rslts/data_30.0625_-97.6875_4
+1995 ==> 0.74
+tmp/forecast/rslts/data_30.0625_-97.6875_5
+1971 ==> 0.68
+tmp/forecast/rslts/data_30.0625_-97.8125_6
+2007 ==> 0.73
+tmp/forecast/rslts/data_30.0625_-97.9375_3
+1967 ==> 0.72
+tmp/forecast/rslts/data_30.0625_-97.9375_4
+1991 ==> 0.71
+2007 ==> 0.71
+tmp/forecast/rslts/data_30.0625_-97.9375_5
+2003 ==> 0.74
+tmp/forecast/rslts/data_30.0625_-98.0625_1
+1967 ==> 0.73
+2007 ==> 0.43
+tmp/forecast/rslts/data_30.0625_-98.0625_2
+1963 ==> 0.72
+1967 ==> 0.42
+2007 ==> 0.69
+tmp/forecast/rslts/data_30.0625_-98.0625_3
+1991 ==> 0.46
+2003 ==> 0.01
+tmp/forecast/rslts/data_30.0625_-98.0625_4
+1987 ==> 0.13
+1995 ==> 0.68
+1999 ==> 0.7
+tmp/forecast/rslts/data_30.0625_-98.0625_5
+1967 ==> 0.68
+1983 ==> 0.57
+1987 ==> 0.71
+2007 ==> 0.53
+tmp/forecast/rslts/data_30.0625_-98.0625_6
+1979 ==> 0.71
+1995 ==> 0.67
+tmp/forecast/rslts/data_30.0625_-98.1875_1
+1979 ==> 0.69
+1991 ==> 0.72
+1995 ==> 0.52
+tmp/forecast/rslts/data_30.0625_-98.1875_2
+2007 ==> 0.67
+tmp/forecast/rslts/data_30.0625_-98.1875_3
+1963 ==> 0.7
+1979 ==> 0.57
+tmp/forecast/rslts/data_30.0625_-98.1875_5
+1971 ==> 0.65
+tmp/forecast/rslts/data_30.0625_-98.1875_6
+1971 ==> 0.74
+tmp/forecast/rslts/data_30.0625_-98.3125_1
+1967 ==> 0.64
+2007 ==> 0.56
+tmp/forecast/rslts/data_30.0625_-98.3125_3
+1991 ==> 0.57
+2003 ==> 0.05
+tmp/forecast/rslts/data_30.0625_-98.3125_4
+1983 ==> 0.69
+1987 ==> 0.38
+tmp/forecast/rslts/data_30.0625_-98.3125_5
+2007 ==> 0.73
+tmp/forecast/rslts/data_30.0625_-98.3125_6
+1963 ==> 0.64
+1979 ==> 0.61
+tmp/forecast/rslts/data_30.0625_-98.5625_1
+1979 ==> 0.66
+tmp/forecast/rslts/data_30.0625_-98.5625_3
+2003 ==> 0.6
+tmp/forecast/rslts/data_30.0625_-98.6875_3
+1979 ==> 0.74
+tmp/forecast/rslts/data_30.0625_-98.6875_5
+1971 ==> 0.72
+tmp/forecast/rslts/data_30.1875_-97.3125_2
+1971 ==> 0.59
+tmp/forecast/rslts/data_30.1875_-97.3125_3
+2007 ==> 0.73
+tmp/forecast/rslts/data_30.1875_-97.3125_4
+1971 ==> 0.74
+tmp/forecast/rslts/data_30.1875_-97.3125_5
+1971 ==> 0.57
+2003 ==> 0.45
+tmp/forecast/rslts/data_30.1875_-97.3125_6
+1999 ==> 0.59
+tmp/forecast/rslts/data_30.1875_-97.8125_2
+1967 ==> 0.63
+tmp/forecast/rslts/data_30.1875_-97.8125_3
+2003 ==> 0.42
+tmp/forecast/rslts/data_30.1875_-97.9375_1
+1999 ==> 0.67
+tmp/forecast/rslts/data_30.1875_-98.0625_3
+2003 ==> 0.53
+tmp/forecast/rslts/data_30.1875_-98.0625_5
+1971 ==> 0.71
+tmp/forecast/rslts/data_30.1875_-98.1875_1
+1987 ==> 0.51
+tmp/forecast/rslts/data_30.1875_-98.1875_2
+1975 ==> 0.58
+tmp/forecast/rslts/data_30.1875_-98.1875_3
+1967 ==> 0.68
+1987 ==> 0.6
+2003 ==> 0.53
+tmp/forecast/rslts/data_30.1875_-98.1875_5
+1971 ==> 0.5
+1991 ==> 0.69
+2003 ==> 0.47
+tmp/forecast/rslts/data_30.1875_-98.1875_6
+2003 ==> 0.69
+tmp/forecast/rslts/data_30.1875_-98.5625_1
+1967 ==> 0.74
+tmp/forecast/rslts/data_30.1875_-98.5625_2
+1963 ==> 0.7
+tmp/forecast/rslts/data_30.1875_-98.5625_3
+1979 ==> 0.74
+tmp/forecast/rslts/data_30.3125_-97.3125_1
+1987 ==> 0.56
+2007 ==> 0.63
+tmp/forecast/rslts/data_30.3125_-97.3125_2
+2007 ==> 0.51
+tmp/forecast/rslts/data_30.3125_-97.3125_3
+1963 ==> 0.58
+tmp/forecast/rslts/data_30.3125_-97.3125_4
+1963 ==> 0.35
+1971 ==> 0.63
+tmp/forecast/rslts/data_30.3125_-97.3125_5
+1967 ==> 0.37
+1971 ==> 0.41
+1991 ==> 0.65
+tmp/forecast/rslts/data_30.3125_-97.3125_6
+1979 ==> 0.72
+1987 ==> 0.58
+1991 ==> 0.68
+tmp/forecast/rslts/data_30.3125_-97.4375_1
+1979 ==> 0.55
+1991 ==> 0.69
+tmp/forecast/rslts/data_30.3125_-97.4375_3
+1967 ==> 0.51
+1979 ==> 0.4
+1987 ==> 0.53
+1995 ==> 0.67
+tmp/forecast/rslts/data_30.3125_-97.4375_4
+1971 ==> 0.69
+1995 ==> 0.48
+tmp/forecast/rslts/data_30.3125_-97.4375_6
+1967 ==> 0.58
+tmp/forecast/rslts/data_30.3125_-97.5625_5
+2003 ==> 0.73
+tmp/forecast/rslts/data_30.3125_-98.0625_1
+1967 ==> 0.74
+tmp/forecast/rslts/data_30.3125_-98.0625_5
+1971 ==> 0.72
+tmp/forecast/rslts/data_30.3125_-98.4375_1
+1967 ==> 0.72
+tmp/forecast/rslts/data_30.3125_-98.4375_2
+2003 ==> 0.56
+tmp/forecast/rslts/data_30.3125_-98.4375_3
+1991 ==> 0.63
+tmp/forecast/rslts/data_30.3125_-98.4375_5
+1987 ==> 0.73
+tmp/forecast/rslts/data_30.3125_-98.4375_6
+1995 ==> 0.68
+tmp/forecast/rslts/data_30.3125_-98.5625_2
+1999 ==> 0.59
+tmp/forecast/rslts/data_30.3125_-98.5625_3
+1991 ==> 0.63
+tmp/forecast/rslts/data_30.3125_-98.5625_5
+1987 ==> 0.72
+tmp/forecast/rslts/data_30.3125_-98.5625_6
+1987 ==> 0.72
+tmp/forecast/rslts/data_30.3125_-98.6875_2
+1983 ==> 0.49
+1991 ==> 0.55
+2003 ==> 0.45
+tmp/forecast/rslts/data_30.3125_-98.6875_4
+1971 ==> 0.61
+tmp/forecast/rslts/data_30.3125_-98.6875_5
+1983 ==> 0.6
+tmp/forecast/rslts/data_30.3125_-98.8125_5
+1967 ==> 0.69
+2003 ==> 0.73
